@@ -9,6 +9,8 @@
                        /join #irssi
 
 # WirelessPT irc support @ http://wirelesspt.net/wiki/IRC
+# Git location: https://github.com/wirelesspt.net/unreal.git
+
 
 # Please note that some of the scripts require that you install aditional perl packages
 # Read the error log in the status window for details about any missing pakages that
