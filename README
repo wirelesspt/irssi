@@ -1,0 +1,103 @@
+# Revison: 11/04/2015
+
+# IRSSI is an advanced console irc client program that runs on linux and windows
+
+# Documentation @ http://www.irssi.org/documentation/manual
+# Github @ https://github.com/irssi/irssi
+# Wikipedia @ http://en.wikipedia.org/wiki/Irssi
+# Irssi chat support @ /server -ssl irc.freenode.net 7070 
+                       /join #irssi
+
+# WirelessPT irc support @ http://wirelesspt.net/wiki/IRC
+
+# Please note that some of the scripts require that you install aditional perl packages
+# Read the error log in the status window for details about any missing pakages that
+# or distro may requeire to be able to use the scripts.
+# Irssi should be at least version 0.8.17 and compliled with perl proxy socks5 ssl
+
+# Some recomendaded settings for irssi and these scripts are:
+
+# Nick setup
+/set nick (choose your nickame)
+/set alternate_nick (choose an alternative)
+/set real_name (whatever you want)
+/set user_name = (same as nickname if you want)
+/set keepnick_autosave = ON
+
+# Adding network 
+/SERVER ADD -noauto -ssl -network Wirelesspt irc.wirelesspt.net 6697
+
+(if you wish an increased security network server. change Wirelesspt to Nixbits ass needed)
+/SERVER ADD -noauto -ssl -network Nixbits irc.nixbits.net 6697
+
+## If you registered your nickname before and want to auto identify
+/NETWORK ADD -autosendcmd "/^msg NickServ identify password; wait 3000" Wirelesspt
+
+### To auto enter a channel. Add as many as needed
+/CHANNEL ADD -auto #wirelesspt wirelesspt
+/CHANNEL ADD -auto #nixbits wirelesspt
+/CHANNEL ADD -auto #linux wirelesspt
+/CHANNEL ADD -auto #news wirelesspt
+
+### Admins
+/NETWORK ADD -autosendcmd "/^msg NickServ identify password; wait 3000; oper nick password ; mode nick +D" Wirelesspt
+(mode +D prevents receiving private messages)
+
+### Conecting to the network
+/connect wirelesspt
+
+# Theme/skin
+/set theme themes/madcow.theme
+
+# Log setup
+/set autolog OFF
+/set autolog_colors OFF
+/set autolog_ignore_targets  
+/set autolog_level all -crap -clientcrap -ctcps
+/set autolog_path ~/.irssi/logs/$tag/$0.log
+/set awaylog_colors OFF
+/set awaylog_file ~/.irssi/logs/away.log
+
+# Away settings:
+/set show_away_once OFF
+/set away awaylog_colors OFF
+/set awaylog_file ~/.irssi/logs/away.log
+/set autolog_path ~/.irssi/logs/$tag/$0.log
+
+# Ignore setup
+/set ignore_log ~/.irssi/logs/ignore.log
+
+# CTCP 
+# Do not reply to ctcp replies
+/ignore * CTCPS
+
+## Remove reply info from settings
+/set ctcp_userinfo_reply  
+/set ctcp_version_reply  
+
+### If you which to ignore statuses 
+/ignore * MODES JOINS PARTS QUITS 
+
+# DCC settings
+/set dccstat_hide_sbar_when_inactive ON
+/set dcc_autoresume ON
+
+## If you wish to ignore dcc private chat, sending and receiving files
+/ignore * DCC
+
+# mIRC-like flashing on message
+/set beep_when_window_active ON
+/set beep_when_away ON
+/set beep_msg_level MSGS NOTICES DCC DCCMSGS HILIGHT
+/set bell_beeps ON
+
+# Other
+/set term_charset UTF-8
+/set recode_autodetect_utf8 ON
+
+/set query_track_nick_changes ON
+/set notify_broadcast ON
+/set mirc_blink_fix ON
+/set show_quit_once OFF
+/set auto_whowas ON
+/set nact_devices (eth0 or wlan0)
