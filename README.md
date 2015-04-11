@@ -25,32 +25,38 @@ Wiki documentation: http://wirelesspt.net/wiki/irc
 Instalation as follows. If you do not have irssi you must install it
  
 # Gentoo linux and gentoo based operating systems: 
- echo net-irc/irssi perl proxy -selinux socks5 ssl >> /etc/portage/package.keywords
- emerge irssi net-irc/irssi-otr
+echo net-irc/irssi perl proxy -selinux socks5 ssl >> /etc/portage/package.keywords
+
+emerge irssi net-irc/irssi-otr
 
 # Debian and crap based on debian linux such as ubuntu: 
- apt-get install irssi irssi-plugin-otr
+apt-get install irssi irssi-plugin-otr
 
 # Arch linux
- sudo pacman -S irssi
- wget https://aur.archlinux.org/packages/ir/irssi-otr/irssi-otr.tar.gz
- tar xf irssi-otr.tar.gz
- cd irssi-otr
- makepkg -si
- echo load otr >> ~/.irssi/startup
+sudo pacman -S irssi
+
+wget https://aur.archlinux.org/packages/ir/irssi-otr/irssi-otr.tar.gz
+
+tar xf irssi-otr.tar.gz
+
+cd irssi-otr
+
+makepkg -si
+
+echo load otr >> ~/.irssi/startup
 
 # Micro$oft windows
- Install Pederasty
- https://support.microsoft.com/en-us/contactus
+Install Pederasty
+
+https://support.microsoft.com/en-us/contactus
 
 # Download the archive: 
- git clone https://github.com/wirelesspt/irssi.git
+git clone https://github.com/wirelesspt/irssi.git
 
 # Copy the contents to yout .irssi user directory which is usually at ~/.irssi: 
- $ cp -a irssi/* ~/.irssi/
+$ cp -a irssi/* ~/.irssi/
 
-Start irssi:
-$ irssi 
+Start irssi: $ irssi 
 
 READ the SETUP file included in this archive
 
