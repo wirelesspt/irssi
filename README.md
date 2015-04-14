@@ -7,7 +7,8 @@ Github @ https://github.com/irssi/irssi
 Wikipedia @ http://en.wikipedia.org/wiki/Irssi
 
 Irssi chat support @ /server -ssl irc.freenode.net 7070 
-                       /join #irssi
+ 
+                     /join #irssi
 
 
 WirelessPT irc support @ http://wirelesspt.net/wiki/IRC

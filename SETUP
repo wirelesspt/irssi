@@ -33,6 +33,7 @@
 /SERVER ADD -noauto -ssl -network Nixbits irc.nixbits.net 6697
 
 ## If you registered your nickname before and want to auto identify
+/NETWORK ADD -nick your_nick -user your_username -realname same_as_nick Wirelesspt
 /NETWORK ADD -autosendcmd "/^msg NickServ identify password; wait 3000" Wirelesspt
 
 ### To auto enter a channel. Add as many as needed
@@ -41,7 +42,7 @@
 /CHANNEL ADD -auto #linux wirelesspt
 /CHANNEL ADD -auto #news wirelesspt
 
-### Admins
+#### Admins
 /NETWORK ADD -autosendcmd "/^msg NickServ identify password; wait 3000; oper nick password ; mode nick +D" Wirelesspt
 (mode +D prevents receiving private messages)
 
@@ -59,15 +60,13 @@
 /set autolog_path ~/.irssi/logs/$tag/$0.log
 /set awaylog_colors OFF
 /set awaylog_file ~/.irssi/logs/away.log
+/set ignore_log ~/.irssi/logs/ignore.log
 
 # Away settings:
 /set show_away_once OFF
 /set away awaylog_colors OFF
 /set awaylog_file ~/.irssi/logs/away.log
 /set autolog_path ~/.irssi/logs/$tag/$0.log
-
-# Ignore setup
-/set ignore_log ~/.irssi/logs/ignore.log
 
 # CTCP 
 # Do not reply to ctcp replies
@@ -97,9 +96,11 @@
 /set term_charset UTF-8
 /set recode_autodetect_utf8 ON
 
+/set resolve_reverse_lookup = ON
 /set query_track_nick_changes ON
 /set notify_broadcast ON
 /set mirc_blink_fix ON
 /set show_quit_once OFF
 /set auto_whowas ON
-/set nact_devices (eth0 or wlan0)
+/set title_string Irssi
+/set toggle usercount_show_ircops ON
